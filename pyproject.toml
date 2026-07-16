@@ -22,4 +22,4 @@ dev = [
 ]
 
 [project.scripts]
-ds = "src.dataset_cli:cli"
+ds = "src.dataset_tools.cli:cli"
