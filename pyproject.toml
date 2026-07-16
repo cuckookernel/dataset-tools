@@ -19,7 +19,8 @@ dependencies = [
 
 dev = [
     "pre-commit",
-    "ty"
+    "ty",
+    "poethepoet",
 ]
 
 [project.scripts]
@@ -32,3 +33,7 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/dataset_tools"]
+
+[tool.poe.tasks]
+ty = "ty check ."
+pc = "pre-commit run --all-files"
