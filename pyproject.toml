@@ -1,0 +1,25 @@
+[project]
+name = "dataset-tools"
+version = "0.1.0"
+description = "polars based cli tool for working with large datasets in parquet format"
+authors = [
+    {name = "Mateo Restrepo", email = "mateini@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.15.1",
+    "loguru>=0.7.3",
+    "setuptools>=80.9.0",
+    "pandas",
+    "polars",
+]
+
+[dependency-groups]
+
+dev = [
+    "ty"
+]
+
+[project.scripts]
+ds = "src.dataset_cli:cli"
