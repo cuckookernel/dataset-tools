@@ -1,6 +1,6 @@
 [project]
 name = "dataset-tools"
-version = "0.1.2"
+version = "0.1.3"
 description = "polars based cli tool for working with large datasets in parquet format"
 authors = [
     {name = "Mateo Restrepo", email = "mateini@gmail.com"},
@@ -13,7 +13,7 @@ dependencies = [
     "setuptools>=80.9.0",
     "pandas",
     "polars",
-    "pyarrow>=25.0.0",
+    "pyarrow>=24.0.0",
     "tabulate>=0.10.0",
 ]
 
