@@ -64,6 +64,9 @@ class OutputManager:
                 return self.format_json(
                     {"num_columns": len(dict_list), "columns": dict_list}
                 )
+            case "md":
+                df = pl.DataFrame(dict_list)
+                return self.format_df(df)
             case "jsonl":
                 return self.format_list_json(dict_list)
             case _:
@@ -128,12 +131,12 @@ class OutputManager:
             return obj
         elif isinstance(obj, pl.DataFrame):
             return self.format_df(obj)
-        elif isinstance(obj, dict):
-            return self.format_json(obj)
         elif isinstance(obj, list):
             return self.format_list_json(obj)
         elif isinstance(obj, pl.Schema):
             return self.format_schema(obj)
+        elif isinstance(obj, dict):
+            return self.format_json(obj)
         elif isinstance(obj, HumanFmtLines):
             return "\n".join(obj.lines)
         else:
