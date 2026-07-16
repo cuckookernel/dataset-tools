@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        exclude: resources/.+
+        args: ["--maxkb=1000"]
+      - id: check-toml
+      - id: check-yaml
+      - id: trailing-whitespace
+        types: [yaml, python, toml]
+      - id: detect-aws-credentials
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.7
+    hooks:
+      # Run the Ruff formatter.
+      - id: ruff-format
+      # Run the Ruff linter.
+      - id: ruff
+        args: [ --fix ]
